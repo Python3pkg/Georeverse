@@ -1,5 +1,5 @@
 import csv
-import StringIO
+import io
 import numpy as np
 from scipy.spatial import distance
 
@@ -7,7 +7,7 @@ from scipy.spatial import distance
 def read_world_cities():
     all_cities = []
     all_lat_lon = []
-    f = StringIO.StringIO(world_cities)
+    f = io.StringIO(world_cities)
     reader = csv.reader(f, delimiter=',')
     for city in reader:
         if city:
